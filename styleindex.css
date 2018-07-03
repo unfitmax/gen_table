@@ -1,0 +1,16 @@
+*
+
+.columns, .rows, .table_width, .table_height {
+    font-size: 12px;
+    margin-left: 15px;
+    width: 50px;
+}
+.checkbox{
+    margin-left: 15px;
+}
+button {
+    margin: 5px;
+}
+border {
+    color: black;
+}
