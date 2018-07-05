@@ -1,4 +1,4 @@
-// Нажатие кнопки "Создать таблицу"
+// "Создать таблицу"
 function addTable() {
     // Поиск классов в теле страницы
     var body = document.querySelector("body"),
@@ -22,6 +22,11 @@ function addTable() {
     console.log(rows);
     console.log(columns);
 
+    genTable(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable);
+}
+
+// Генератор таблицы
+function genTable(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable) {
     // Создание таблицы и отрисовка рамки
     table = document.createElement("table"),
         checkbox = document.getElementById("checkbox");
@@ -35,20 +40,6 @@ function addTable() {
     // Установка размеров таблицы
     table.setAttribute("wigth", width);
     table.setAttribute("height", height);
-    // generate();
-
-}
-
-function generate() {
-
-
-    var body = addTable(),
-        rows = addTable(),
-        tr = addTable(),
-        columns = addTable(),
-        td = addTable(),
-        firstTable = addTable();
-
 
     // Построение строк и колонок
     for (var i = 0; i < rows; i++) {
@@ -76,11 +67,7 @@ function generate() {
     }
 }
 
-function  something( a ) {
-  console.log('write', a || 'something')
-}
-
-// Нажатие кнопки "Удалить таблицу"
+// "Удалить таблицу"
 function destroyTable() {
     var body = document.querySelector("body"),
         table = document.querySelector("table"),
@@ -91,12 +78,22 @@ function destroyTable() {
         numColumns = document.getElementById("columns");
     if (document.querySelector("table") != null) {
         document.body.removeChild(table);
+    }
+}
+
+// "Очистить поля"
+function clearSpace() {
+    var body = document.querySelector("body"),
+        checkbox = document.getElementById("checkbox"),
+        tableWidth = document.getElementById("table_width"),
+        tableHeight = document.getElementById("table_height"),
+        numRows = document.getElementById("rows"),
+        numColumns = document.getElementById("columns");
+    if (document.querySelector("table") != null) {
         checkbox.checked = false;
         tableWidth.value = "";
         tableHeight.value = "";
         numRows.value = "";
         numColumns.value = "";
     }
-
-    something(' вывести что-нибудь ');
 }
