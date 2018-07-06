@@ -23,6 +23,7 @@ function addTable() {
     console.log(columns);
 
     genTable(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable);
+    combineCells(rows, columns, table, tr, td, text);
 }
 
 // Генератор таблицы
@@ -95,5 +96,16 @@ function clearSpace() {
         tableHeight.value = "";
         numRows.value = "";
         numColumns.value = "";
+    }
+}
+
+// Объединение ячеек
+function combineCells(rows, columns, table, tr, td, text) {
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < columns; j ++) {
+            text = document.createElement("input");
+            td.appendChild(text);
+            tr.appendChild(td);
+        }
     }
 }
