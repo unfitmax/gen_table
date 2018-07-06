@@ -48,11 +48,13 @@
             Рамка
             <input type="checkbox" class="checkbox" id="checkbox" value=" Рамка ">
         </label>
-        <button id="clear" onclick="clearSpace()" style="background-color: whitesmoke;">Очистить поля</button>
     </p>
 
-    <button id="create" onclick="addTable();" style="background-color: whitesmoke;">Создать таблицу</button>
-    <button id="delete" onclick="destroyTable();" style="background-color: orangered;">Удалить таблицу</button>
+    <button id="create" onclick="addTable();" style="background-color: whitesmoke; width: 150px;">Создать таблицу</button>
+    <button id="combine" onclick="combineCells();" style="background-color: whitesmoke; width: 150px;">Объеденить ячейки</button>
+    <br>
+    <button id="clear" onclick="clearSpace()" style="background-color: whitesmoke; width: 150px;">Очистить поля</button>
+    <button id="delete" onclick="destroyTable();" style="background-color: orangered; width: 150px; color: white;">Удалить таблицу</button>
 
     <!--Генератор таблиц JS-->
     <script src = "jsindex.js"></script>
