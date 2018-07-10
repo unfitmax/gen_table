@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="styleindex.css">
     <meta charset="UTF-8">
     <title>Генератор таблиц</title>
@@ -10,6 +11,8 @@
 
 <body>
 
+<div class="qu">
+    <ul><br>
     <!--Количество строк-->
     <label>
         Необходимое количество строк
@@ -54,7 +57,10 @@
     <button id="combine" onclick="combineCells();" style="background-color: whitesmoke; width: 150px;">Объеденить ячейки</button>
     <br>
     <button id="clear" onclick="clearSpace()" style="background-color: whitesmoke; width: 150px;">Очистить поля</button>
-    <button id="delete" onclick="destroyTable();" style="background-color: orangered; width: 150px; color: white;">Удалить таблицу</button>
+    <button id="delete" onclick="destroyTable();" style="background-color: orangered; width: 150px; color: white; margin-bottom: 25px;">Удалить таблицу</button>
+    </ul>
+</div>
+<br>
 
     <!--Генератор таблиц JS-->
     <script src = "jsindex.js"></script>
