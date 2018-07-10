@@ -3,10 +3,15 @@
 body {
     font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
+h1 {
+    text-align: center;
+}
 .columns, .rows, .table_width, .table_height {
     font-size: 12px;
     margin-left: 15px;
     width: 50px;
+    position: absolute;
+    right: 41%;
 }
 .checkbox{
     margin-left: 15px;
