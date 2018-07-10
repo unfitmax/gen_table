@@ -1,5 +1,8 @@
 *
 
+body {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
 .columns, .rows, .table_width, .table_height {
     font-size: 12px;
     margin-left: 15px;
@@ -10,7 +13,30 @@
 }
 button {
     margin: 5px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
 border {
     color: black;
+}
+table {
+    border-collapse: collapse;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    margin: auto;
+    text-align: center;
+}
+.qu {
+    background-color: lavender;
+    margin: auto;
+    display: block;
+    width: 22%;
+    border-radius: 10px;
+}
+th {
+    text-align: left;
+}
+td {
+    padding: 5px;
+}
+input {
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
