@@ -23,7 +23,7 @@ function addTable() {
     console.log(columns);
 
     genTable(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable);
-    combineCells(rows, columns, table, tr, td, text);
+    combineCells(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable);
 }
 
 // Генератор таблицы
@@ -68,6 +68,50 @@ function genTable(body, tableWidth, tableHeight, numRows, numColumns, width, hei
     }
 }
 
+// Объединение ячеек
+function combineCells(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable) {
+    // Создание таблицы и отрисовка рамки
+    table = document.createElement("table"),
+        checkbox = document.getElementById("checkbox");
+
+    if (checkbox.checked == true) {
+        table.setAttribute("border", "2px");
+    } else {
+        table.setAttribute("border", "0");
+    }
+    var input;
+
+    // Установка размеров таблицы
+    table.setAttribute("wigth", width);
+    table.setAttribute("height", height);
+
+    // Построение строк и колонок
+    for (var i = 0; i < rows; i++) {
+        tr = document.createElement("tr");
+        for (var j = 0; j < columns; j++) {
+            td = document.createElement("td");
+            input = document.createElement("input");
+            input.setAttribute("type", "checkbox")
+
+            // Установка зависимостей
+            td.appendChild(input);
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    console.log(tr);
+    console.log(td);
+
+    if (firstTable == null) {
+        // return;
+        body.appendChild(table);
+    } else {
+        var newTable = body.appendChild(table);
+        return;
+        document.body.replaceChild(newTable, firstTable);
+    }
+}
+
 // "Удалить таблицу"
 function destroyTable() {
     var body = document.querySelector("body"),
@@ -96,16 +140,5 @@ function clearSpace() {
         tableHeight.value = "";
         numRows.value = "";
         numColumns.value = "";
-    }
-}
-
-// Объединение ячеек
-function combineCells(rows, columns, table, tr, td, text) {
-    for (var i = 0; i < rows; i++) {
-        for (var j = 0; j < columns; j ++) {
-            text = document.createElement("input");
-            td.appendChild(text);
-            tr.appendChild(td);
-        }
     }
 }
