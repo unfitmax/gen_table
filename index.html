@@ -11,12 +11,14 @@
 
 <body>
 
+<h1>Табличный генератор</h1>
+
 <div class="qu">
     <ul><br>
     <!--Количество строк-->
     <label>
         Необходимое количество строк
-        <input type="text" class="rows" id="rows" value="2" >
+        <input type="text" class="rows" id="rows" value="2">
     </label>
 
     <br><br>
@@ -24,7 +26,7 @@
     <!--Количество стобцов-->
     <label>
         Необходимое количество столбцов
-        <input type="text" class="columns" id="columns" value="2" >
+        <input type="text" class="columns" id="columns" value="2">
     </label>
 
     <br><br>
@@ -32,7 +34,7 @@
     <!--Задаем ширину таблицы-->
     <label>
         Необходимая ширина таблицы в пикселях
-        <input type="text" class="table_width" id="table_width" value="200px" >
+        <input type="text" class="table_width" id="table_width" value="200px">
     </label>
 
     <br><br>
@@ -40,7 +42,7 @@
     <!--Задаем высоту таблицы-->
     <label>
         Необходимая высота таблицы в пикселях
-        <input type="text" class="table_height" id="table_height" value="100px" >
+        <input type="text" class="table_height" id="table_height" value="100px">
     </label>
 
     <br><br>
@@ -49,14 +51,14 @@
     <p>
         <label>
             Рамка
-            <input type="checkbox" class="checkbox" id="checkbox" value=" Рамка ">
+            <input type="checkbox" class="checkbox" id="checkbox" value=" Рамка " checked>
         </label>
     </p>
 
     <button id="create" onclick="addTable();" style="background-color: whitesmoke; width: 150px;">Создать таблицу</button>
     <button id="combine" onclick="combineCells();" style="background-color: whitesmoke; width: 150px;">Объеденить ячейки</button>
     <br>
-    <button id="clear" onclick="clearSpace()" style="background-color: whitesmoke; width: 150px;">Очистить поля</button>
+    <button id="clear" onclick="clearSpace();" style="background-color: whitesmoke; width: 150px;">Очистить поля</button>
     <button id="delete" onclick="destroyTable();" style="background-color: orangered; width: 150px; color: white; margin-bottom: 25px;">Удалить таблицу</button>
     </ul>
 </div>
