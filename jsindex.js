@@ -30,7 +30,7 @@ function addTable() {
     var tableParams = getFormParams();
     genTable(tableParams);
     destroyTable(tableParams);
-    clearSpace(tableParams)
+    clearSpace(tableParams);
 
     //combineCells(body, tableWidth, tableHeight, numRows, numColumns, width, height, rows, columns, tr, td, firstTable);
 }
@@ -77,8 +77,37 @@ function genTable(params) {
         body.appendChild(table);
     } else {
         var newTable = body.appendChild(table);
-        //return;
-        // document.body.replaceChild(newTable, params.selector);
+    }
+}
+
+// "Удалить таблицу"
+function destroyTable(dest) {
+        var body = document.querySelector("body");
+        table = document.querySelector("table");
+        checkbox = document.getElementById("checkbox");
+        dest.tableWidth = document.getElementById("table_width");
+        dest.tableHeight = document.getElementById("table_height");
+        dest.numRows = document.getElementById("rows");
+        dest.numColumns = document.getElementById("columns");
+    if (document.querySelector("table") != null) {
+        document.body.removeChild(table);
+    }
+}
+
+// "Очистить поля"
+function clearSpace() {
+    var body = document.querySelector("body"),
+        checkbox = document.getElementById("checkbox"),
+        tableWidth = document.getElementById("table_width"),
+        tableHeight = document.getElementById("table_height"),
+        numRows = document.getElementById("rows"),
+        numColumns = document.getElementById("columns");
+    if (document.querySelector("table") != null) {
+        checkbox.checked = false;
+        tableWidth.value = "";
+        tableHeight.value = "";
+        numRows.value = "";
+        numColumns.value = "";
     }
 }
 
@@ -107,7 +136,7 @@ function genTable(params) {
 //             input = document.createElement("input");
 //             input.setAttribute("type", "checkbox");
 //
-//             // Установка зависимостей
+//             // Установка зависимостейdestroyTable
 //             td.appendChild(input);
 //             tr.appendChild(td);
 //         }
@@ -125,34 +154,3 @@ function genTable(params) {
 //         document.body.replaceChild(newTable, firstTable);
 //     }
 // }
-
-// "Удалить таблицу"
-function destroyTable() {
-    var body = document.querySelector("body"),
-        table = document.querySelector("table"),
-        checkbox = document.getElementById("checkbox"),
-        tableWidth = document.getElementById("table_width"),
-        tableHeight = document.getElementById("table_height"),
-        numRows = document.getElementById("rows"),
-        numColumns = document.getElementById("columns");
-    if (document.querySelector("table") != null) {
-        document.body.removeChild(table);
-    }
-}
-
-// "Очистить поля"
-function clearSpace() {
-    var body = document.querySelector("body"),
-        checkbox = document.getElementById("checkbox"),
-        tableWidth = document.getElementById("table_width"),
-        tableHeight = document.getElementById("table_height"),
-        numRows = document.getElementById("rows"),
-        numColumns = document.getElementById("columns");
-    if (document.querySelector("table") != null) {
-        checkbox.checked = false;
-        tableWidth.value = "";
-        tableHeight.value = "";
-        numRows.value = "";
-        numColumns.value = "";
-    }
-}
